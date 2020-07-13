@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peach.org - It's something</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(230, 189, 173);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .head_bar {
+            background-color: rgb(192, 91, 73);
+            height: 5em;
+            width: 200%;
+            position: fixed;
+            top: 0;
+        }
+        
+        .logo {
+            display: inline-block;
+            background-color: rgb(255, 226, 214);
+            font-size: 1.75em;
+            padding: 0px 3px;
+            margin-left: 1em;
+            font-family: 'Courier New', Courier, monospace;
+            color: black;
+        }
+        
+        .log {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .nav {
+            display: inline-block;
+            list-style: none;
+            margin-left: 25%;
+            position: fixed;
+            right: 0px;
+            top: 22px;
+            /* position: absolute;
+            right: 0px;
+            top: 22px; */
+        }
+        
+        .nav-link {
+            display: inline;
+            text-decoration: none;
+            padding: 40px 10px 24px 10px;
+            color: rgb(236, 176, 163);
+        }
+        
+        .nav-link:hover {
+            background-color: rgb(255, 123, 100);
+            color: white;
+        }
+        
+        .nav li {
+            display: inline-block;
+        }
+        
+        .wlcm {
+            margin-top: 100px;
+            margin-left: 50px;
+            text-emphasis: none;
+            color: rgb(173, 76, 46);
+        }
+        
+        .foot {
+            display: block;
+            position: fixed;
+            bottom: 0;
+            background-color: rgb(192, 91, 73);
+            width: 100%;
+            text-align: center;
+            color: rgb(252, 229, 224);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head_bar">
+        <p class="logo"><a href="main.html" class="log">Peach.org</a></p>
+
+        <ul class="nav">
+            <!-- <li>Home</li> -->
+            <li><a href="" class="nav-link" id="list_start">About</a></li>
+            <li><a href="" class="nav-link">Projects</a></li>
+            <li><a href="./login.html" class="nav-link">Log in</a></li>
+            <li><a href="" class="nav-link">Sign up</a></li>
+
+        </ul>
+    </div>
+
+
+
+    <h1 class="wlcm">Welcome to Peach.com!</h1>
+
+    <footer class="foot">Powered by HTML</footer>
+</body>
+
+</html>

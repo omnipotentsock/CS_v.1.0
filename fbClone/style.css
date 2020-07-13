@@ -1,0 +1,101 @@
+body {
+    background-color: #eeeeee;
+    margin: 0;
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+}
+
+.navbar {
+    background-color: rgb(63, 90, 147);
+}
+
+#tHead {
+    color: #fff;
+}
+
+.logo {
+    display: inline-block;
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.loginForm {
+    margin-top: 20px;
+    display: inline-table;
+    float: right;
+    margin-right: 7em;
+}
+
+#loginBtn {
+    background-color: rgb(63, 90, 147);
+    padding: 3px 6px;
+    color: #eee;
+    border: 0.25px solid rgb(77, 107, 172);
+    border-radius: 2px;
+}
+
+.recentLogins {
+    width: fit-content;
+    float: left;
+    margin-left: 3em;
+}
+
+.signupForm {
+    width: 600px;
+    float: right;
+    margin-right: 6em;
+}
+
+.signupDetails {
+    font-size: 20px;
+    height: 1.75em;
+    margin: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+#fn,
+#sn {
+    width: 13.5em;
+}
+
+#id,
+#pass {
+    width: 28em;
+}
+
+.dob {
+    width: 5em;
+    height: 2em;
+    font-size: 1em;
+}
+
+.sex {
+    font-size: 1.25em;
+}
+
+#f,
+#m,
+#o {
+    padding-left: 10em;
+}
+
+.tnc {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.signupBtn {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.4em;
+    height: 2em;
+    width: 8em;
+    background: linear-gradient(to bottom, #5dbb5d 0%, #3a9157 100%);
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
