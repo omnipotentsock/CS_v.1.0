@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="location" value="">
+    <button type="submit" id="btnSubmit">submit</button>
+    <p id="temp"></p>
+
+</body>
+<script>
+    const locationInput = document.getElementById("location");
+    const submitBtn = document.getElementById("btnSubmit");
+    const temp = document.getElementById("temp")
+
+    submitBtn.onclick = function() {
+        const url = `http://api.openweathermap.org/data/2.5/weather?q=${locationInput.value}&appid=4af9e044737f83dd0831f27f696d9b41`
+
+        console.log(locationInput.value);
+        fetch(url)
+            .then(function(res) {
+                res
+
+                    .json()
+                    .then(function(data) {
+                        temp.innerText = data.weather[0].main
+                        console.log(data);
+                    })
+
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
+    }
+</script>
+
+</html>
