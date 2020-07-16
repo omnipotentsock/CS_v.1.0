@@ -11,8 +11,13 @@
             background-color: black;
         }
         
-        table {
-            border: 3px dotted #af3;
+        table,
+        td {
+            border: 1px solid #af3;
+        }
+        
+        td {
+            padding: 5px 8px;
         }
         
         button {
@@ -29,8 +34,11 @@
 
 <body>
     <button onclick="tableGenerate()">Generate Table</button>
+    <br>
+    <br>
 
     <table id="tb"></table>
+    <td></td>
     <script>
         function tableGenerate() {
             var table = document.getElementById("tb");
