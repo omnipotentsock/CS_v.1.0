@@ -52,52 +52,60 @@
 
 
         <ul id="listItems">
-            <!-- <li class="listItem0">Brush</li><br>
-            <li class="listItem1">Get Ready</li><br>
-            <li class="listItem2">Wear Uniform</li><br> -->
+
         </ul>
     </div>
+
     <script>
         var addBtn = document.getElementById("addToListBtn");
         var listSubject = document.getElementById("listItems");
 
         const arr = [{
             task: "Brush",
-            complete: true
+            completion: true
         }, {
             task: "Get Ready",
-            complete: true
+            completion: true
         }, {
             task: "Wear Uniform",
-            complete: true
+            completion: true
         }, ]
 
-
+        updateList();
 
         var i = 3;
 
-
         function addToList() {
-
-            var inHtml = "";
-            for (let i = 0; i < arr.length; i++) {
-                if (arr.complete == true)
-                    inHtml += `<li class "list-item-complete" id = listItem${i}>${arr[i].task}</li>`
-
-                else
-                    inHtml += `<li class "list-item-incomplete" id = listItem${i}>${arr[i].task}</li>`
+            listSubject = document.getElementById("listItems");
+            arr.push({
+                task: "newListItem",
+                completion: false
+            })
 
 
+            updateList();
+        }
 
-            }
+        document.getElementsByClassName("listItem").onclick = strikeThru();
 
-            // var listInput = document.getElementById("listInputText").value;
-            // console.log(listSubject.innerHTML);
-            // listSubject.innerHTML += ` < li class = "listItem${i}" > $ {
+        function strikeThru() {
 
         }
-        // console.log(listSubject.innerHTML);
-        // i++;
+
+        function updateList() {
+            var inHtml = "";
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].completion == true) {
+                    inHtml += `<strike><li class="listItem" class = "list-item-complete" id = listItem${i}>${arr[i].task}</li></strike>`
+                } else
+                    inHtml += `<li class = "listItem" class = "list-item-incomplete" id = listItem${i}>${arr[i].task}</li>`
+
+
+                document.getElementById("listItems").innerHTML = inHtml
+            }
+            console.log(inHtml);
+
+        }
     </script>
 </body>
 
