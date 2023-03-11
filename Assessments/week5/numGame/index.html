@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+</head>
+
+<body>
+    <label for="inputBar">Enter a guess</label>
+    <input type="text" id="inputBar">
+    <button type="submit" id="sbmtBtn">Submit guess</button>
+    <p id="prevGuesses">Previous guesses:</p>
+    <p id="indicator"></p>
+</body>
+<script>
+    var submit = document.getElementById("sbmtBtn")
+    var guesses = document.getElementById("prevGuesses")
+    var indicator = document.getElementById("indicator")
+
+    var c = 0
+    var num = Math.random(0, 1)
+    num *= 100
+    num = Math.round(num)
+    console.log(num);
+
+    submit.onclick = function submitGuess() {
+        var inputBar = document.getElementById("inputBar").value
+        guesses.innerText += " " + inputBar
+        if (parseInt(inputBar) === num) {
+            indicator.innerHTML = `<p style="background-color: chartreuse;" id="indicator">Your answer is correct!</p>`
+        } else if (parseInt(inputBar) > num) {
+            indicator.innerHTML = `<p style="background-color: red;" id="indicator">Too High!</p>`
+        } else if (parseInt(inputBar) < num) {
+            indicator.innerHTML = `<p style="background-color: red;" id="indicator">Too Low!</p>`
+        }
+    }
+</script>
+
+</html>

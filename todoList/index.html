@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <style>
+        body {
+            background-color: #FFE0B5;
+        }
+        
+        .container {
+            background-color: #4b4e75;
+            margin: 0 auto;
+            width: 600px;
+            padding-top: 3em;
+            margin-top: 2em;
+        }
+        
+        #listItems {
+            background-color: #6b6399;
+            padding-right: 2em;
+            padding-top: 2em;
+        }
+        
+        li {
+            background-color: #1eca35;
+            list-style: none;
+            margin: 5px;
+            padding: 0.75em;
+        }
+        
+        #listInputText {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        #addToListBtn {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <input type="text" placeholder="Add something to the list!" id="listInputText">
+        <br>
+        <button type="submit" id="addToListBtn" onclick="addToList()">Add</button>
+
+
+        <ul id="listItems">
+
+        </ul>
+    </div>
+
+    <script>
+        var addBtn = document.getElementById("addToListBtn");
+        var listSubject = document.getElementById("listItems");
+
+        const arr = [{
+            task: "Brush",
+            completion: true
+        }, {
+            task: "Get Ready",
+            completion: true
+        }, {
+            task: "Wear Uniform",
+            completion: true
+        }, ]
+
+        updateList();
+
+        var i = 3;
+
+        function addToList() {
+            listSubject = document.getElementById("listItems");
+            arr.push({
+                task: "newListItem",
+                completion: false
+            })
+
+
+            updateList();
+        }
+
+        document.getElementsByClassName("listItem").onclick = strikeThru();
+
+        function strikeThru() {
+
+        }
+
+        function updateList() {
+            var inHtml = "";
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].completion == true) {
+                    inHtml += `<strike><li class="listItem" class = "list-item-complete" id = listItem${i}>${arr[i].task}</li></strike>`
+                } else
+                    inHtml += `<li class = "listItem" class = "list-item-incomplete" id = listItem${i}>${arr[i].task}</li>`
+
+
+                document.getElementById("listItems").innerHTML = inHtml
+            }
+            console.log(inHtml);
+
+        }
+    </script>
+</body>
+
+</html>

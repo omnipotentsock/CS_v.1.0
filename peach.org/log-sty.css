@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body{
+    /* background-color: #677DB0; */
+    background-image: url(https://images.hdqwalls.com/download/2d-environment-4k-57-2560x1440.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#loginForm
+{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    background-color: #E7DFC6;
+
+    border: 2px solid #b6a67a;
+    border-radius: 20px;
+
+    padding: 15px;
+    padding-top: 5px;
+
+    box-shadow: 10px 10px #914340;
+}
+
+.title
+{
+    text-align: center;
+    text-transform: uppercase;
+    color: #161925;
+    margin-bottom: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-control
+{
+    display: block;
+    width: 99%;
+    height: 25px;
+
+    margin: 5px ;
+    margin-bottom: 15px;
+
+    border-color: #b6a67a ;
+    border-radius: 5px;
+    
+}
+
+.submit
+{
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #d8caa2;
+    border-width: 2px;
+    border-color: #b6a67a;
+}
+
+.pwb
+{
+    margin-top: 0px;
+}
+
+.pwby
+{
+    font-size: 20px;
+    padding-left: 30px;
+    color: aliceblue;
+}
+
+#o
+{
+    height: 200px;
+    width: auto;
+}
+
+#peach.org
+{
+    display: inline;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+}
+

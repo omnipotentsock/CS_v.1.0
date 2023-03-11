@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Generated Table</title>
+    <style>
+        body {
+            color: #af3;
+            background-color: black;
+        }
+        
+        table,
+        td {
+            border: 1px solid #af3;
+        }
+        
+        td {
+            padding: 5px 8px;
+        }
+        
+        button {
+            color: #af3;
+            border: 2px solid #af3;
+            background-color: #000;
+            height: 3em;
+            width: 6em;
+            font-size: 1.5em;
+            font-family: 'Courier New', Courier, monospace
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="tableGenerate()">Generate Table</button>
+    <br>
+    <br>
+
+    <table id="tb"></table>
+    <td></td>
+    <script>
+        function tableGenerate() {
+            var table = document.getElementById("tb");
+            for (var i = 0, a = 1; i < 10; i++) {
+                var row = table.insertRow(i);
+                for (var j = 0; j < 10; j++) {
+                    var cell1 = row.insertCell(j);
+                    cell1.innerHTML = a;
+                    a++
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

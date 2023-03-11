@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+</head>
+<style>
+    @font-face {
+        font-family: "Giette";
+        src: url(./Giette.ttf);
+    }
+</style>
+
+<style id="background color">
+    /* body { cloudy
+        background: rgb(159,204,255);
+background: radial-gradient(circle, rgba(159,204,255,1) 0%, rgba(208,227,255,1) 22%, rgba(211,236,255,1) 76%, rgba(116,197,255,1) 100%);
+    } */
+    
+    body {
+        background: rgb(46, 0, 0);
+        background: radial-gradient(circle, rgba(46, 0, 0, 1) 0%, rgba(239, 255, 251, 1) 0%, rgba(182, 210, 244, 1) 79%);
+    }
+    /* body { clear
+        background: rgb(255, 255, 255);
+        background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(155, 244, 255, 1) 11%, rgba(5, 64, 254, 1) 100%);
+    } */
+</style>
+
+<body>
+    <div class="form">
+        <input type="text" id="inp" value="delhi" style="font-family: Giette;">
+        <button type="submit" id="btnSubmit" style="font-family: Giette;">submit</button>
+        <div class="dataForm">
+            <p id="temp"></p>
+            <p id="weather"></p>
+            <p id="location"></p>
+        </div>
+
+    </div>
+</body>
+<script>
+    const locationInput = document.getElementById("inp");
+    const submitBtn = document.getElementById("btnSubmit");
+
+    const temp = document.getElementById("temp")
+    const weather = document.getElementById("weather")
+    const loc = document.getElementById("location")
+
+    var bg = document.getElementById("style")
+
+    submitBtn.onclick = function() {
+        const url = `http://api.openweathermap.org/data/2.5/weather?q=${locationInput.value}&appid=4af9e044737f83dd0831f27f696d9b41`
+
+        console.log(locationInput.value);
+        fetch(url)
+            .then(function(res) {
+                res
+
+                    .json()
+                    .then(function(data) {
+                        var cel = data.main.temp - 273;
+                        cel = Math.round(cel * 10) / 10;
+                        temp.innerText = cel + "°C"
+
+                        weather.innerText = data.weather[0].main;
+                        var we = data.weather[0].main
+                        console.log(we);
+
+
+
+                        // function changeBG(w) {
+
+                        //     if (w == "Haze") {
+                        //         bg.innerHTML = `body {background: rgb(46, 0, 0);background: radial-gradient(circle, rgba(46, 0, 0, 1) 0%, rgba(239, 255, 251, 1) 0%, rgba(182, 210, 244, 1) 79%);}`
+                        //     } else if (w == "Cloudy") {
+                        //         bg.innerHTML = `body {background: rgb(159,204,255);background: radial-gradient(circle, rgba(159,204,255,1) 0%, rgba(208,227,255,1) 22%, rgba(211,236,255,1) 76%, rgba(116,197,255,1) 100%);} `
+                        //     } else if (w == "clear") {
+                        //         bg.innerHTML = `body { background: rgb(255, 255, 255);background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(155, 244, 255, 1) 11%, rgba(5, 64, 254, 1) 100%);} `
+                        //     }
+                        // }
+
+                        // changeBG(we)
+
+                        loc.innerText = data.name;
+
+                        console.log(data);
+                    })
+
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
+    }
+</script>
+
+<style>
+    body {
+        font-family: "Giette";
+    }
+    
+    .form {
+        font-family: "Giette";
+    }
+    
+    p {
+        margin: 2px;
+    }
+    
+    .dataForm {
+        background-color: rgba(255, 255, 255, 0.474);
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 2.5em;
+        padding: 1em;
+    }
+    
+    #inp,
+    #btnSubmit {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    #inp {
+        text-align: center;
+        font-size: 1.5em;
+    }
+</style>
+
+<style id="background color"></style>
+
+</html>
